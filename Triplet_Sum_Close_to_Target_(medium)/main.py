@@ -18,15 +18,15 @@ class Solution:
                 if diff == 0:
                     return [arr[i], arr[left], arr[right]]
 
-                if diff < smallest_diff or abs(diff) == abs(smallest_diff) and diff > smallest_diff:
+                if abs(diff) < abs(smallest_diff) or abs(diff) == abs(smallest_diff) and diff > smallest_diff:
                     smallest_list = [arr[i], arr[left], arr[right]]
                     smallest_diff = diff
 
-                if diff < 0:
+                if diff > 0:
+                    left += 1
+                else:
                     right -= 1
 
-                elif diff > 0:
-                    left += 1
 
         return smallest_list
 def main():
